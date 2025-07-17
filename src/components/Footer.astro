@@ -1,0 +1,39 @@
+---
+import Social from "./Social.astro";
+
+const socials = [
+  {
+    platform: 'github',
+    username: 'AndyTechnologies'
+  },
+  {
+    platform: 'discord',
+    url: 'users',
+    username: '1362055811563520218'
+  }
+];
+
+---
+
+<footer>
+  <p>Visita mis redes sociales:</p>
+  <ul>
+    { socials.map(item => <li> <Social platform={item.platform} username={item.username} url={item.url} /> </li>) }
+  </ul>
+</footer>
+
+<style>
+  footer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    & ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: .8rem;
+    }
+  }
+</style>

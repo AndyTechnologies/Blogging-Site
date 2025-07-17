@@ -1,0 +1,7 @@
+---
+const { posts = [] } = Astro.props
+---
+
+<ul>
+    { posts.map((item: any) => <li><a data-astro-prefetch href={`${item.url}`}>{item.name}</a></li>) }
+</ul>
