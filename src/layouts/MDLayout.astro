@@ -1,0 +1,23 @@
+---
+import HTMLayout from "./HTMLayout.astro";
+import ShowTags from "@/components/ShowTags.astro";
+
+const { frontmatter } = Astro.props;
+---
+<HTMLayout title={`Blogging: ${frontmatter.title}`} description={frontmatter.description}>
+
+<h1>{frontmatter.title}</h1>
+
+<p>{frontmatter.pubDate.toLocaleDateString()}</p>
+
+<p><em>{frontmatter.description}</em></p>
+
+<p>Written by: {frontmatter.author}</p>
+
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+
+<ShowTags tags={frontmatter.tags} />
+
+<slot />
+
+</HTMLayout>
